@@ -19,7 +19,7 @@ sso = GoogleSSO(
 )
 
 
-@app.get("/auth/login")
+@app.get("/auth/google/login")
 async def auth_init():
     """Initialize auth and redirect"""
     async with sso:
@@ -28,7 +28,7 @@ async def auth_init():
         )
 
 
-@app.get("/auth/callback")
+@app.get("/auth/google/callback")
 async def auth_callback(request: Request):
     """Verify login"""
     async with sso:
