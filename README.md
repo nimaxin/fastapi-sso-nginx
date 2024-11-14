@@ -1,7 +1,7 @@
 1. clone the repo:
 
 ```
-git clone ...
+git clone https://github.com/nimaxin/fastapi-sso-nginx.git
 ```
 
 2. create .env file:
