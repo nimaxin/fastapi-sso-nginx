@@ -14,7 +14,7 @@ app = FastAPI()
 sso = GoogleSSO(
     client_id=CLIENT_ID,
     client_secret=CLIENT_SECRET,
-    redirect_uri="https://preprodxin.ddns.net/auth/google/callback",
+    # redirect_uri="https://preprodxin.ddns.net/auth/google/callback",
     allow_insecure_http=True,
 )
 
@@ -24,6 +24,7 @@ async def auth_init():
     """Initialize auth and redirect"""
     async with sso:
         return await sso.get_login_redirect(
+            redirect_uri="https://preprodxin.ddns.net/auth/google/callback",
             params={"prompt": "consent", "access_type": "offline"}
         )
 
